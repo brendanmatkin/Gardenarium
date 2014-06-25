@@ -1,11 +1,11 @@
 Gardenarium
 ===========
 
-Paragraph [link](http://google.com).
+A unity-based interactive animation experience for [Beakerhead](http://www.beakerhead.com). 
 
-Subtitle
---------
+By Brendan Matkin & Paloma Dawkins
 
-* UL 1
-* UL 2
-* UL 3 
+Details
+-------
+
+coming soon... 
