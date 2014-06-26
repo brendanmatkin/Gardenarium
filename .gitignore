@@ -29,7 +29,8 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must ends with two \r.
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -38,3 +39,4 @@ Icon
 .Spotlight-V100
 .Trashes
 >>>>>>> 29b35584ec4b579e3799260209680ff23be5fdef
+Temp/
