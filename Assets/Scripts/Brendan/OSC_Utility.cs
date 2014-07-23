@@ -18,6 +18,7 @@ public class OSC_Utility : MonoBehaviour
 	private float red = 0;
 	private float green = 0;
 	private float blue = 0;
+	private float alpha = 0;
 
 	void Start() {
 		UDPPacketIO udp = GetComponent<UDPPacketIO>();

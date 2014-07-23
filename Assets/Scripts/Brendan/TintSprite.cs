@@ -10,7 +10,7 @@ using System.Collections;
 public class TintSprite : MonoBehaviour
 {
 	public bool continuousUpdate = true;
-	public static Color tintColor = new Color(0.0f,0.5f,1.0f,0.9f);
+	public static Color tintColor = new Color(0.0f,0.5f,1.0f,1.0f);
 	public static string _tC = "waiting...";
 	
 

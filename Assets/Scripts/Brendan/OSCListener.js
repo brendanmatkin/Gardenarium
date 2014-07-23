@@ -13,6 +13,7 @@ static var OSC_color : Color = Color();
 private var red : float = 0;
 private var green : float = 0;
 private var blue : float = 0;
+//private var alpha : float = 0;
 var tinter;
 
 
@@ -48,6 +49,7 @@ public function updateColor(oscMessage : OscMessage) : void
 	red = oscMessage.Values[0];
 	green = oscMessage.Values[1];
 	blue = oscMessage.Values[2];
+	//alpha = oscMessage.Values[3];
 }
 
 
