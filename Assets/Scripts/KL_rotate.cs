@@ -2,9 +2,9 @@
 using System.Collections;
 
 public class KL_rotate : MonoBehaviour {
-	public float continuousRotationSpeed;	
-	public float absoluteRotationFactor;
-	public float timeFactor;
+	public float continuousRotationSpeed = 10;	
+	public float absoluteRotationFactor = 720;
+	public float timeFactor = 5;
 	public bool continuous = true;
 
 	void Update () {

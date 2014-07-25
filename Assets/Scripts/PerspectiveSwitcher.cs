@@ -4,9 +4,9 @@ using System.Collections;
 [RequireComponent (typeof(MatrixBlender))]
 public class PerspectiveSwitcher : MonoBehaviour
 {
-	private Matrix4x4   ortho,
-	perspective;
-	public float        fov     = 60f,
+	private Matrix4x4   ortho,	perspective;
+	public float        
+	fov     = 60f,
 	near    = .3f,
 	far     = 1000f,
 	orthographicSize = 50f;
@@ -20,13 +20,13 @@ public class PerspectiveSwitcher : MonoBehaviour
 		ortho = Matrix4x4.Ortho(-orthographicSize * aspect, orthographicSize * aspect, -orthographicSize, orthographicSize, near, far);
 		perspective = Matrix4x4.Perspective(fov, aspect, near, far);
 		camera.projectionMatrix = ortho;
-		orthoOn = true;
+		orthoOn = false;
 		blender = (MatrixBlender) GetComponent(typeof(MatrixBlender));
 	}
 	
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetKeyDown(KeyCode.C))
 		{
 			orthoOn = !orthoOn;
 			if (orthoOn)
