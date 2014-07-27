@@ -30,7 +30,7 @@ public class TintSprite : MonoBehaviour
 		if (continuousUpdate == true){
 			renderer.material.color = tintColor;
 		}
-		print(tintColor);
+		//print(tintColor);
 	}
 	
 }
