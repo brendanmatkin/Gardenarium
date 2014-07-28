@@ -33,7 +33,6 @@ public class CameraDolly : MonoBehaviour {
 			topView = true;
 			if (topView) target.rotation = Quaternion.Euler(target.rotation.eulerAngles.x+(inc*2),target.rotation.eulerAngles.y,target.rotation.eulerAngles.z);
 		}
-		//print(zoom);
 
 		/*if (!up) {
 			Transform _startPos = target;
