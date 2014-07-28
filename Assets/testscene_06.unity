@@ -22996,7 +22996,6 @@ GameObject:
   - 114: {fileID: 1728491099}
   - 81: {fileID: 1728491098}
   - 114: {fileID: 1728491105}
-  - 114: {fileID: 1728491103}
   - 114: {fileID: 1728491104}
   m_Layer: 0
   m_Name: Main Camera
@@ -23041,7 +23040,7 @@ MonoBehaviour:
   axes: 2
   sensitivityX: 10
   sensitivityY: 10
-  minimumX: 0
+  minimumX: -360
   maximumX: 360
   minimumY: -60
   maximumY: 60
@@ -23094,21 +23093,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
---- !u!114 &1728491103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1728491096}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d4d5ca6959bdd14db267608984d3a1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fov: 60
-  near: .300000012
-  far: 1000
-  orthographicSize: 180
 --- !u!114 &1728491104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23123,20 +23107,20 @@ MonoBehaviour:
   rotCurve:
     serializedVersion: 2
     m_Curve:
-    - time: .00105820107
+    - time: 0
       value: 0
-      inSlope: -.138585359
-      outSlope: -.138585359
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
-    - time: .099999994
-      value: .199999988
-      inSlope: 2.92581964
-      outSlope: 2.92581964
+    - time: .30101496
+      value: .500018656
+      inSlope: 2.11546063
+      outSlope: 2.11546063
       tangentMode: 0
     - time: 1
       value: 1
-      inSlope: .0284808874
-      outSlope: .0284808874
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -23145,33 +23129,28 @@ MonoBehaviour:
     m_Curve:
     - time: 0
       value: 0
-      inSlope: -.0591428019
-      outSlope: -.0591428019
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
-    - time: .749936402
-      value: .500290036
-      inSlope: 1.71286213
-      outSlope: 1.71286213
+    - time: .700041711
+      value: .50156635
+      inSlope: 1.81495559
+      outSlope: 1.81495559
       tangentMode: 0
-    - time: 1
+    - time: .982088923
       value: 1
-      inSlope: -.404463083
-      outSlope: -.404463083
+      inSlope: -.657193124
+      outSlope: -.657193124
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
   distZCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
-      value: -.0015037593
-      inSlope: -3.32932508e-08
-      outSlope: -3.32932508e-08
-      tangentMode: 0
-    - time: 1
-      value: -.00126701151
-      inSlope: .00392507389
-      outSlope: .00392507389
+    - time: .190209895
+      value: .334984839
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -23179,8 +23158,9 @@ MonoBehaviour:
   endPos: {fileID: 2054100802}
   target: {fileID: 1728491097}
   inc: .00499999989
-  mouseDelay: 1
+  mouseDelay: .100000001
   topView: 0
+  mouser: 0
   targetRotX: 0
   zoom: 0
   counter: 0

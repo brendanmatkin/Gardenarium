@@ -31,6 +31,7 @@ public class MouseLookCameraDolly : MonoBehaviour {
 	//private bool cameraDolly = CameraDolly.topView; 
 
 	float rotationY = 0F;
+	Vector3 mouseRotation = new Vector3(0,0,0);
 
 	void Update ()
 	{
@@ -56,16 +57,20 @@ public class MouseLookCameraDolly : MonoBehaviour {
 				rotationY = Mathf.Clamp (rotationY, minimumY, maximumY);
 				//transform.localEulerAngles = new Vector3(-rotationY, transform.localEulerAngles.y, 0);
 
-				Vector3 mouseRotation = new Vector3(-rotationY, transform.localEulerAngles.y, 0);
+				mouseRotation = new Vector3(-rotationY, transform.localEulerAngles.y, 0);
 				transform.localEulerAngles = mouseRotation;
 
-				// this bit stops the camera from jumping when mouse control is returned - it solves the problem but is not behaving as expected. 
-				if (cameraDolly.zoom <= 0.0f && cameraDolly.counter > cameraDolly.mouseDelay) {
-					//Vector3.Lerp( transform.rotation, mouseRotation, Time.deltaTime);
-					print("YUP!");
-					Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(mouseRotation),Time.deltaTime);
-				}
+				
 			}
+		}
+		if (cameraDolly.mouser == true && cameraDolly.zoom <= 0.0f) {
+			print("YUP!");
+					// this bit stops the camera from jumping when mouse control is returned - it solves the problem but is not behaving as expected. 
+					//Vector3.Lerp( transform.rotation, mouseRotation, Time.deltaTime);
+					mouseRotation = new Vector3(-rotationY, transform.localEulerAngles.y, 0);
+					//transform.rotation.x = Mathf.Lerp(transform.rotation.x, -rotationY, cameraDolly.counter);
+					float rotX = Mathf.Lerp(transform.rotation.eulerAngles.x, mouseRotation.x, cameraDolly.counter);
+					transform.rotation = Quaternion.Euler(rotX,transform.rotation.eulerAngles.y,0);
 		}
 	}
 	

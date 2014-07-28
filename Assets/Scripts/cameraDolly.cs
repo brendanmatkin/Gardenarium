@@ -15,11 +15,13 @@ public class CameraDolly : MonoBehaviour {
     [HideInInspector]
     public bool topView = false;
     [HideInInspector]
+    public bool mouser = false;
+    [HideInInspector]
     public float targetRotX;
     [HideInInspector]
     public float zoom = 0.0f;
     [HideInInspector]
-    public float counter = 0;
+    public float counter = 0.0f;
 
     void Start() {
     	camera.orthographicSize = 200;
@@ -31,6 +33,7 @@ public class CameraDolly : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.C)) {
 			up = !up;
 			topView = true;
+			//mouser = true;
 			if (topView) target.rotation = Quaternion.Euler(target.rotation.eulerAngles.x+(inc*2),target.rotation.eulerAngles.y,target.rotation.eulerAngles.z);
 		}
 
@@ -51,7 +54,6 @@ public class CameraDolly : MonoBehaviour {
 				if (zoom > (0.0f+inc)) zoom -= inc;
 				if (zoom < inc) zoom = 0.0f;
 			}
-			print(zoom);
 			targetRotX = rotCurve.Evaluate(zoom);	
 
 			Vector3 offset = new Vector3(_endPos.position.x, distYCurve.Evaluate(zoom)*_endPos.position.y, _endPos.position.z-distZCurve.Evaluate(zoom));
@@ -67,19 +69,18 @@ public class CameraDolly : MonoBehaviour {
 			//else transform.rotation = Quaternion.Slerp(transform.rotation, xRotation, zoom+(inc*10));
 			if (zoom >= 1.0f-inc) camera.orthographic = true;
 			else camera.orthographic = false; 
-			
 			if (zoom <= 0.0f) {
 				counter += Time.deltaTime;
+				mouser = true;
 				//print("time on 0 zoom");
-				//print(counter);
-				if (counter > mouseDelay){
+				
+				if (counter >= mouseDelay){
+					//print (counter);
 					topView = false;
-					counter = 0;
+					mouser = false;	
+					counter = 0.0f;
 				}
 			}
-		}
-		else {
-			//targetRotX = 0.0f;
 		}
 	}
 
