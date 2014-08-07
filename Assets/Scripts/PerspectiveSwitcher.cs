@@ -4,12 +4,12 @@ using System.Collections;
 [RequireComponent (typeof(MatrixBlender))]
 public class PerspectiveSwitcher : MonoBehaviour
 {
-	private Matrix4x4   ortho,	perspective;
-	public float        
-	fov     = 60f,
+	private Matrix4x4   ortho,
+	perspective;
+	public float        fov     = 60f,
 	near    = .3f,
 	far     = 1000f,
-	orthographicSize = 50f;
+	orthographicSize = 350f;
 	private float       aspect;
 	private MatrixBlender blender;
 	private bool        orthoOn;
@@ -30,9 +30,9 @@ public class PerspectiveSwitcher : MonoBehaviour
 		{
 			orthoOn = !orthoOn;
 			if (orthoOn)
-				blender.BlendToMatrix(ortho, 1f);
-			else
 				blender.BlendToMatrix(perspective, 1f);
+			else
+				blender.BlendToMatrix(ortho, 1f);
 		}
 	}
 }

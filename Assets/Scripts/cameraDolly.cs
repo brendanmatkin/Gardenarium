@@ -24,13 +24,14 @@ public class CameraDolly : MonoBehaviour {
     public float counter = 0.0f;
 
     void Start() {
-    	camera.orthographicSize = 200;
+    	camera.orthographicSize = 450;
     }
 
 
 	void Update(){
 
-		if (Input.GetKeyDown(KeyCode.C)) {
+		//if (Input.GetKeyDown(KeyCode.C)) {
+		if (Input.GetButtonDown("Camera")) {
 			up = !up;
 			topView = true;
 			//mouser = true;
@@ -69,6 +70,7 @@ public class CameraDolly : MonoBehaviour {
 			//else transform.rotation = Quaternion.Slerp(transform.rotation, xRotation, zoom+(inc*10));
 			if (zoom >= 1.0f-inc) camera.orthographic = true;
 			else camera.orthographic = false; 
+			print (zoom);
 			if (zoom <= 0.0f) {
 				counter += Time.deltaTime;
 				mouser = true;
@@ -83,5 +85,6 @@ public class CameraDolly : MonoBehaviour {
 			}
 		}
 	}
+
 
 }

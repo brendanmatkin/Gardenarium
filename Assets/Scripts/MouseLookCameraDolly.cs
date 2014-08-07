@@ -38,6 +38,7 @@ public class MouseLookCameraDolly : MonoBehaviour {
 		CameraDolly cameraDolly = GetComponent<CameraDolly>();
 		bool control = cameraDolly.topView;
 		if (control == false) {
+			//print ("Control off!");
 			if (axes == RotationAxes.MouseXAndY)
 			{
 				float rotationX = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * sensitivityX;
